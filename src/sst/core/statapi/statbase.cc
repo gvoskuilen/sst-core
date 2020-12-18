@@ -53,6 +53,11 @@ const std::string& StatisticBase::getCompName() const
     return m_component->getName();
 }
 
+const std::string& StatisticBase::getCompType() const
+{
+    return m_component->getType();
+}
+
 void
 Statistic<void>::outputStatisticFields(StatisticFieldsOutput* UNUSED(statOutput), bool UNUSED(EndOfSimFlag))
 {

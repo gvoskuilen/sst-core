@@ -143,6 +143,7 @@ nobase_dist_sst_HEADERS = \
 	statapi/statoutputtxt.h \
 	statapi/statoutputcsv.h \
 	statapi/statoutputjson.h \
+	statapi/statoutputsimstat.h \
 	statapi/statoutputhdf5.h \
 	statapi/statbase.h \
 	statapi/stathistogram.h \
@@ -228,6 +229,7 @@ sst_core_sources = \
 	statapi/statoutputtxt.cc \
 	statapi/statoutputcsv.cc \
 	statapi/statoutputjson.cc \
+	statapi/statoutputsimstat.cc \
 	statapi/statbase.cc \
 	cputimer.cc \
 	iouse.cc

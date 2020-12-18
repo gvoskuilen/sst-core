@@ -118,6 +118,8 @@ public:
     /** Return the Component Name */
     const std::string& getCompName() const;
 
+    const std::string& getCompType() const;
+
     /** Return the Statistic Name */
     inline const std::string& getStatName() const {return m_statName;}
 
