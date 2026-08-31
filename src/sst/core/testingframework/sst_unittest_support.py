@@ -1184,7 +1184,7 @@ _FLOAT_STAT_PATTERN = re.compile(r'\.(f32|f64) = ([\d.]+)')
 
 def _extract_float_key_and_values(line: str) -> Tuple[str, List[float]]:
     values: List[float] = []
-    def replace(m: re.Match) -> str:
+    def replace(m: re.Match[str]) -> str:
         values.append(float(m.group(2)))
         return ".{0} = <F>".format(m.group(1))
     key = _FLOAT_STAT_PATTERN.sub(replace, line)
