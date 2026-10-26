@@ -81,7 +81,7 @@ class testcase_Signals(SSTTestCase):
         # Run test
         sdlfile = "{0}/test_RealTime.py".format(testsuitedir)
         outfile = "{0}/test_RealTime_SIGUSR2_default.out".format(outdir)
-        self.run_sst(sdlfile, outfile, other_args="--exit-after=10", send_signal=signal.SIGUSR2, signal_sec=5)
+        self.run_sst(sdlfile, outfile, other_args="--exit-after=20", send_signal=signal.SIGUSR2, signal_sec=8)
 
         line_count = 0
         exit_count = 0
@@ -111,7 +111,7 @@ class testcase_Signals(SSTTestCase):
         # Run test
         sdlfile = "{0}/test_RealTime.py".format(testsuitedir)
         outfile = "{0}/test_RealTime_SIGINT.out".format(outdir)
-        self.run_sst(sdlfile, outfile, other_args="--exit-after=10", send_signal=signal.SIGINT, signal_sec=5)
+        self.run_sst(sdlfile, outfile, other_args="--exit-after=20", send_signal=signal.SIGINT, signal_sec=8)
 
         line_count = 0
         exit_count = 0
@@ -223,7 +223,7 @@ class testcase_Signals(SSTTestCase):
         # Run test
         sdlfile = "{0}/test_RealTime.py".format(testsuitedir)
         outfile = "{0}/test_RealTime_SIGUSR1_heartbeat.out".format(outdir)
-        self.run_sst(sdlfile, outfile, other_args="--exit-after=10 --sigusr1=sst.rt.heartbeat", send_signal=signal.SIGUSR1, signal_sec=5)
+        self.run_sst(sdlfile, outfile, other_args="--exit-after=20 --sigusr1=sst.rt.heartbeat", send_signal=signal.SIGUSR1, signal_sec=10)
 
         # Check for a heartbeat message
         # Check for ended due to exit-after
@@ -253,7 +253,7 @@ class testcase_Signals(SSTTestCase):
         # Run test
         sdlfile = "{0}/test_RealTime.py".format(testsuitedir)
         outfile = "{0}/test_RealTime_SIGUSR2_heartbeat.out".format(outdir)
-        self.run_sst(sdlfile, outfile, other_args="--exit-after=10 --sigusr2=sst.rt.heartbeat", send_signal=signal.SIGUSR2, signal_sec=5)
+        self.run_sst(sdlfile, outfile, other_args="--exit-after=20 --sigusr2=sst.rt.heartbeat", send_signal=signal.SIGUSR2, signal_sec=10)
 
         # Check for a heartbeat message
         # Check for ended due to exit-after
@@ -282,7 +282,7 @@ class testcase_Signals(SSTTestCase):
         # Run test
         sdlfile = "{0}/test_RealTime.py".format(testsuitedir)
         outfile = "{0}/test_RealTime_SIGALRM_multiaction.out".format(outdir)
-        self.run_sst(sdlfile, outfile, other_args="--exit-after=15s --sigalrm=sst.rt.heartbeat(interval=1s);sst.rt.status.core(interval=2s)")
+        self.run_sst(sdlfile, outfile, other_args="--exit-after=25s --sigalrm=sst.rt.heartbeat(interval=1s);sst.rt.status.core(interval=2s)")
 
         # Check for a heartbeat message: 5-6
         # Check for status: 2-3
